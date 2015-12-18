@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc} %fonts
+\usepackage{baskervald} %fonts
+\usepackage[md]{titlesec} %Stops bold titles
+\usepackage[utf8]{inputenc} %fonts
+\usepackage[margin=0.5in]{geometry} % Margins
+\usepackage{amssymb, amsthm, amsmath, amstext,array,relsize,mathrsfs} % Maths
+\usepackage{graphicx} % Graphics
+\usepackage{tikz-cd,tikz} %Diagrams
+\usetikzlibrary{decorations.markings,calc,shapes,snakes} %Tikz stuff
+
+%Theorems and Definitions
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+%General:
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\br}[1]{\left( #1 \right)}
+\newcommand{\bff}[1]{\mb{#1}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\scr}[1]{\mathcal{#1}}
+\newcommand{\hf}{\frac{1}{2}}
+\newcommand{\del}{\nabla}
+\newcommand{\mo}[1]{\left| \; #1 \; \right|}
+\newcommand{\cross}{\times}
+\newcommand{\sqbr}[1]{\left[ #1 \right]}
+\newcommand{\cbr}[1]{\left\{ #1 \right\}}
+\newcommand{\angl}[1]{\langle #1 \rangle}
+\newcommand{\conj}{^{*}}
+\newcommand{\osum}{\oplus}
+\newcommand{\bigosum}{\bigoplus}
+\DeclareMathOperator*{\Res}{Res}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\lie}[1]{\mathfrak{#1}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newcommand{\rp}[1]{ \mathbb{RP}^{#1}}
+\newcommand{\cp}[1]{ \mathbb{CP}^{#1}}
+\newcommand{\ex}[1]{$\color{red}^{\mathlarger{\circledast}\textit{#1}}$}
+
+%Physics nonsense
+\newcommand{\ket}[1]{\left.| #1 \right\rangle}
+\newcommand{\bra}[1]{\left\langle #1\right.|}
+\newcommand{\braket}[2]{\left\langle #1  |  \; #2 \right \rangle}
+\newcommand{\avg}[1]{\left\langle #1  \right \rangle}
+\newcommand{\unit}[1]{\; \mathrm{#1}}
+\newcommand{\herm}{^{\dag}}
+
+%Calculus
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdt}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\dash}{^{\prime}}
+\newcommand{\ddash}{^{\prime\prime}}
+
+%Number sets
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\quat}{\mathbb{H}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\kield}{\mathbb{K}}
+
+%Environment shortcuts
+\newcommand{\eqn}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\eqnstar}[1]{\begin{align} #1 \end{align}}
+\newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
+\newcommand{\thm}[1]{\begin{theorem} #1 \end{theorem}}
+\newcommand{\prf}[1]{\begin{proof} #1 \end{proof}}
+\newcommand{\m}[1]{\br{\begin{matrix} #1 \end{matrix}}}
+\newcommand{\aray}[1]{ \left\{\begin{array}{ccc}#1\end{array}\right.}
+
+%Misspellings
+\newcommand{\detla}{\delta}
+\newcommand{\simga}{\sigma}
+
+%Changing default Greek letters
+\let\epsilon\varepsilon
+\let\varepsilon\epsilon
+\let\subset\subseteq
+\let\subseteq\subset
+
+%Algebraic Geometry
+\newcommand{\ia}{\mathfrak{a}}
+\newcommand{\ib}{\mathfrak{b}}
+\newcommand{\ip}{\mathfrak{p}}
+\newcommand{\iq}{\mathfrak{q}}
+\newcommand{\pnk}{\mathbb{P}^{n}(k)}
+\newcommand{\ank}{\mathbb{A}^{n}(k)}
+\newcommand{\rad}{\mathrm{rad}}
+\newcommand{\spec}{\mathrm{Spec}}
+\newcommand{\shf}{\mathscr{F}}
+\newcommand{\res}{\mathrm{res}}
+
+\title{ASSIGNMENT 1}
+\author{Max Jeffs, u5389111}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section*{The First Section}
+
+\eqn{
+\oint \frac{f(z)}{z} \dd{z} = 2 \pi i \Res_{z = 0} f(z)
+}
+
+\nocite{*}
+\bibliography{biblio}{}
+\bibliographystyle{amsalpha}
+
+\end{document}
