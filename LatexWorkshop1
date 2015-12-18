@@ -1,0 +1,335 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb} % Maths
+\usepackage{amsthm} % Maths
+\usepackage{amsmath} % Maths
+\usepackage{graphicx} % Graphics
+\usepackage{fancyhdr} % Headers and footers
+\usepackage{tikz-cd} % Commutative diagrams
+\usepackage{amstext} % Math tables
+\usepackage{array} % Math tables
+\usepackage{rotating} % Rotation
+\usepackage[margin=0.7in]{geometry} % Margins
+\usepackage{cite} %Citations
+%Theorems and Definitions
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+%Calculus
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\integral}[4] {\int \limits_{#1}^{#2} #3 \: \mathrm{d}#4}
+\newcommand{\integ}[2]{\int\limits_{#1}^{#2}}
+\newcommand{\inftyint}{\int\limits_{-\infty}^{\infty}}
+\newcommand{\nsum}[2]{\sum\limits_{#1 = #2}^{\infty}}
+\newcommand{\avg}[1]{\left\langle #1  \right \rangle}
+%More Calculus
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdt}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\der}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\dash}{^{\prime}}
+\newcommand{\ddash}{^{\prime\prime}}
+%Number sets
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\quat}{\mathbb{H}}
+\newcommand{\field}{\mathbb{F}}
+%Common math commands
+\newcommand{\br}[1]{\left( #1 \right)}
+\newcommand{\bff}[1]{\mb{#1}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+%More common math commands
+\newcommand{\scr}[1]{\mathcal{#1}}
+\newcommand{\hf}{\frac{1}{2}}
+\newcommand{\del}{\nabla}
+\newcommand{\mo}[1]{\left| #1 \right|}
+\newcommand{\cross}{\times}
+\newcommand{\sqbr}[1]{\left[ #1 \right]}
+\newcommand{\cbr}[1]{\left\{ #1 \right\}}
+\newcommand{\angl}[1]{\langle #1 \rangle}
+\newcommand{\unit}[1]{\hat{\bff{#1}}}
+\newcommand{\conj}{^{*}}
+\newcommand{\osum}{\oplus}
+\newcommand{\bigosum}{\bigoplus}
+\DeclareMathOperator*{\Res}{Res}
+%Environment shortcuts
+\newcommand{\eqn}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\eqnstar}[1]{\begin{align} #1 \end{align}}
+\newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
+\newcommand{\thm}[1]{\begin{theorem} #1 \end{theorem}}
+\newcommand{\prf}[1]{\begin{proof} #1 \end{proof}}
+\newcommand{\m}[1]{\br{\begin{matrix} #1 \end{matrix}}}
+\newcommand{\aray}[1]{ \left\{\begin{array}{ccc}#1\end{array}\right.}
+%Misspellings
+\newcommand{\detla}{\delta}
+\newcommand{\simga}{\sigma}
+%Slashed integral
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+%Lie groups and Lie algebras
+\newcommand{\SOn}{\text{SO}_n}
+\newcommand{\son}{\mathfrak{so}_n}
+\newcommand{\On}{\text{O}_n}
+\newcommand{\on}{\mathfrak{o}_n}
+\newcommand{\GLn}{\text{GL}_n}
+\newcommand{\Spinn}{\text{Spin}_n}
+\newcommand{\spinn}{\text{spin}_n}
+
+\pagestyle{fancy}
+\lhead{$\scr{ANUMS}$}
+\rhead{\LaTeX\ Workshop I}
+
+\title{\textbf{ANUMS \LaTeX\ Workshop I}}
+\author{Maxim Jeffs}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Setup}
+If you are working on one of the computers provided, open up the program \texttt{TexWorks} and start on section 2.
+\paragraph{}
+If you have brought your own laptop, to begin you will need to download a \LaTeX\ compiler and editor. The complete installation \texttt{MikTeX} is recommended for Windows, and can be downloaded from \texttt{miktex.org/download}. If you are running OSX, download \texttt{MacTeX} from \texttt{tug.org/mactex/}. If you are running a Linux OS, you can probably figure this out for yourself. Follow all of the instructions provided, and once everything has installed, run \texttt{TeXworks} or \texttt{TeXShop}. Alternatively, you can also download \texttt{TeXMaker} from \texttt{xm1math.net/texmaker/download.html} and run this instead. Again, follow all instructions provided. If you run into any trouble, just ask one of our friendly volunteers. 
+
+\section{Compiling}
+
+Either way, you will hopefully be greeted with a blank screen that allows you to type. Before doing anything else, copy the following incantation into the document:
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\title{Example Document}
+\author{John Smith}
+\date{\today}
+\begin{document}
+\maketitle
+
+\end{document}
+\end{verbatim}
+
+replacing \texttt{Example Document} by the title of your document and \texttt{John Smith} by your own name. Now hit \texttt{Typeset} at the top left of the screen, or the green `Play' button; after naming and saving your document, you should see a \texttt{PDF} of what your document `actually looks like' appear on the right of the screen. If you type something between \verb!\maketitle! and $\verb!\end{document}!$ (the `body' of the document) and hit \texttt{Typeset} again, you should see the text you typed appear in this view; this is how you will produce your document. If you navigate to where you saved your file, you should find a \texttt{PDF} document containing exactly what you saw after you last pressed \texttt{Typeset}; this is the output of the program. Make sure to keep pressing \texttt{Typeset} as you follow the instructions so that you can see whether you are producing the correct results. If you have typed something incorrectly, instead of compiling your document, you will get an error message looking like:
+\begin{verbatim}
+/.Document1.tex:6: Undefined control sequence.
+L.6 \Maketitle
+\end{verbatim}
+telling you that, in this example, \verb!\maketitle! on line $6$ was typed incorrectly as \verb!\Maketitle!. Be careful: even things such as capital letters and empty lines can be important! Also be warned that typing symbols in ordinary text such as $<$ or \& may often have unintended effects.
+
+\section{Basics}
+
+\subsection{Sections}
+
+Your document will probably have sections; these can be made by inserting \verb! \section{The Section Name}! into the body of your document, between \verb!\maketitle! and \verb!\end{document}!, as is usual. An example of a section heading can be seen above. If you have subsections, you can use \verb!\subsection{A subsection}! in exactly the same manner. To start a new paragraph, simply leave an empty line between the two blocks of text. Another thing you may want to do is start a new page: you can do this by placing \verb!\clearpage! in the relevant location. If all you wanted to do was produce a text assignment, you can probably stop learning here; the power of \LaTeX\ is the ease with which it allows you to typeset mathematics. 
+
+\subsection{Equations}
+
+There are two main types of mathematics formats in \LaTeX: inline and displayed. To create inline equations, simply place \verb!$!-signs around any part of a sentence that contains mathematical symbols. For example, enter the following into the body of the document:
+\begin{verbatim}
+One example of a quadratic equation is $x^2 + x + 1 = 0$, and an example of a cubic
+equation is $9 y^3 + 11 y = 5$. 
+\end{verbatim}
+to produce: ``One example of a quadratic equation is $x^2 + x + 1 = 0$, and an example of a cubic
+equation is $9 y^3 + 11 y = 5$." Inline formatting is recommended for mathematical expressions that are relatively small and fit easily into the structure of a sentence. If this is not the case, then we have displayed formats, which take up a line of their own and are produced using
+\begin{verbatim}
+\begin{equation}
+
+\end{equation}
+\end{verbatim}
+where the symbols are typed on the line between \verb!\begin{equation}! and \verb!\end{equation}!. As an example, 
+\begin{verbatim}
+The Fundamental Theorem of Calculus states that
+\begin{equation}
+\int\limits_{a}^{b} f^{\prime}(x) \; \mathrm{d}x = f(b) - f(a)
+\end{equation}
+for all functions $f: [a,b] \to \mathbb{R}$ with continuous derivative. 
+\end{verbatim}
+produces:
+\paragraph{}
+``The Fundamental Theorem of Calculus states that
+\begin{equation}
+\int\limits_{a}^{b} f^{\prime}(x) \; \mathrm{d}x  = f(b) - f(a)
+\end{equation}
+for all functions $f: [a,b] \to \mathbb{R}$ with continuous derivative."
+
+\subsection{Symbols}
+
+To produce expressions like the one above, with symbols such as $\int$ and $\mathbb{R}$, one needs to use built-in commands. These always begin with a backslash, and must be placed inside either \verb!$!-signs or a \verb!\begin{equation}! and \verb!\end{equation}! pair. These commands for symbols essentially have to be memorised, but most have fairly intuitive names and there are only a small number that occur frequently. Greek letters are produced by writing the name of the letter after the slash: for example, \verb!\phi! gives $\phi$. If the upper-case form of the Greek letter is required, write the first letter of the name in upper case: the command \verb!\Phi! gives the symbol $\Phi$. Some of the most important of the other symbols are shown in Figure 1. 
+\begin{figure}
+\centering
+\begin{tabular}{ccccccccc}
+\verb!\frac{a}{b}! && $\frac{a}{b}$ &&&& \verb!\sin! && $\sin$ \\[4mm]
+\verb!\mathrm{e}^{-x^2}! && $\mathrm{e}^{-x^2}$ &&&& \verb!\log! && $\log$ \\[4mm]
+\verb!a_{n}^{m}! && $a_{n}^{m}$ &&&& \verb! \{ \}! && $\{ \}$ \\[4mm]
+\verb!\sum_{i=1}^{\infty}! && $\sum\limits_{i=1}^{\infty}$  &&&& \verb!\lim! && $\lim$\\[4mm]
+\verb!\int\limits_{a}^{b}! && $\int\limits_{a}^{b}$ &&&& \verb! \to! && $\to$ \\[4mm]
+\verb!\partial! && $\partial$ &&&& \verb! \times! && $\times$ \\[4mm]
+\verb!\mathbb{C}! && $\mathbb{C}$ &&&& \verb! \prime! && $\prime$ \\[4mm]
+\verb!\in! && $\in$&&&& \verb! \cap! && $\cap$ \\[4mm]
+\verb!\subset! && $\subset$ &&&& \verb! \cup! && $\cup$ \\[4mm]
+\verb!\leq! && $\leq$&&&& \verb! \bar{a} ! && $\bar{a}$ \\[4mm]
+\verb!\geq! && $\geq$&&&& \verb!\sqrt[n]{x} ! && $\sqrt[n]{x}$ \\[4mm]
+\verb!\mathbf{v}! && $\mathbf{v}$ (bold) &&&& \verb!\dots! && $\dots$ \\[4mm]
+\end{tabular}
+\caption{Commonly used \LaTeX\ commands}
+\centering
+\end{figure}
+\paragraph{}
+One common pitfall is that, unlike most symbols in \LaTeX , brackets not automatically resized to give the best typesetting. For instance, if we type
+\begin{verbatim}
+\begin{equation}
+( \int\limits_{a}^{b} f^{\prime}(x) \; \mathrm{d}x)
+\end{equation}
+\end{verbatim}
+then we produce
+\begin{equation}
+( \int\limits_{a}^{b} f^{\prime}(x) \; \mathrm{d}x)
+\end{equation}
+where the brackets are much too small. To correct this, we use \verb!\left(! and \verb!\right)! instead of \verb!(! and \verb!)!, to produce
+\begin{equation}
+\left( \int\limits_{a}^{b} f^{\prime}(x) \; \mathrm{d}x \right)
+\end{equation}
+
+Two other important commands worth noting are to add \verb!\;! between symbols if the spacing between them is too small, and to begin quotations with back-ticks (found under the `tilde' symbol), rather than with the usual \verb!'! symbol.
+
+\subsection{Structures}
+
+Other than equations, there are a number of other mathematical formats you may want to use, such as vectors, matrices, tables and arrays. To produce such an object, add the following inside a displayed equation:
+\begin{verbatim}
+\begin{matrix}
+
+\end{matrix}
+\end{verbatim}
+Entries of the matrix can be entered as in a usual equation, but the command \verb!&! is used to move to the next column, and \verb!\\! is used to move to the next row. Examples are vectors, such as
+\begin{verbatim}
+\mathbf{v} = 
+\begin{pmatrix}
+1 \\ 2 \\ 3
+\end{pmatrix}
+\end{verbatim}
+which gives
+\begin{equation}
+\mathbf{v} = 
+\begin{pmatrix}
+1 \\ 2 \\ 3
+\end{pmatrix}
+\end{equation}
+as well as matrices,
+\begin{verbatim}
+A = 
+\begin{pmatrix}
+1 & x & 2 \\ 
+4 & y & z \\ 
+w & 2 & \alpha 
+\end{pmatrix}
+\end{verbatim}
+which gives
+\begin{equation}
+A = 
+\begin{pmatrix}
+1 & x & 2 \\ 
+4 & y & z \\ 
+w & 2 & \alpha 
+\end{pmatrix}
+\end{equation}
+and multi-line function definitions,
+\begin{verbatim}
+f(x) = \left\{
+\begin{matrix}
+1 & \text{if $x$ is rational} \\
+0 & \text{if $x$ is irrational}
+\end{matrix} \right.
+\end{verbatim}
+which gives
+\begin{equation}
+f(x) = \left\{
+\begin{matrix}
+1 & \text{if $x$ is rational} \\
+0 & \text{if $x$ is irrational}
+\end{matrix} \right.
+\end{equation}
+Note that \texttt{pmatrix} automatically places round brackets around the matrix.
+
+\section{Further Techniques}
+
+In principle, you now know enough to produce a \LaTeX\ document, but you will almost immediately find that, even for simple documents, you will need symbols, structures and formats that we have not covered here. Also, you have probably already encountered many error messages that may have caused you a great deal of frustration. Overcoming these things is simply a matter of practice, but we can point out a number of tools and tips that will help to smooth this path:
+
+\begin{itemize}
+\item Be extremely careful with brackets! Keeping track of curly bracket pairs $\{ \}$ can drive you insane. 
+\item Learn to understand the error messages, such as \texttt{undefined control sequence}, \texttt{missing \$ inserted} and \texttt{runaway argument}, and how you can use the compiler to help you find mistakes.
+\item Use an editor such as \texttt{TeXMaker} that allows you to set up things such as auto-completion, and has a pane of symbols that you can click on to add to the document. If you are \textit{very} enthusiastic, try \texttt{Emacs}.
+\item If you can't find the command for a symbol, try \texttt{Detexify} at \texttt{detexify.kirelabs.org/classify.html}, where you can draw the symbol to find the command. If this fails, there is always the comprehensive symbol list at \texttt{tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}.
+\item If you have a problem or a mysterious error, try looking it up on the internet -- there are a number of extremely helpful resources.  The page \texttt{en.wikibooks.org/wiki/LaTeX/Mathematics} is particularly good.
+\item If all else fails, there is \texttt{LaTeX Stack Exchange} at \texttt{tex.stackexchange.com} where you can ask questions that will be answered by helpful and friendly \LaTeX\ experts.
+\item And, of course, come along to the other \LaTeX\ workshops that we will be running later in the semester! The next one will be in week 5 on Thursday from 4-5 pm in CRISP G018.
+\end{itemize}
+
+\section{Example}
+
+If you have not brought an assignment, try to typeset the following passage (from a genuine assignment):
+\paragraph{}
+The functions $\psi_{n,\ell,m}$ are given explicitly in spherical polar coordinates by
+\eqn{
+\psi_{n,\ell,m} = \sqrt{\br{\frac{2}{na}}^3 \frac{(n - \ell - 1)!}{2n (n + \ell)!}} \; \e{ - r/na} \br{\frac{2 r}{na}}^{\ell} L^{2\ell+1}_{n - \ell - 1} \br{\frac{2 r}{na}}Y^{m}_{\ell}(\phi,\psi)
+}
+where $Y_{i}^{j}$ are the spherical harmonics and $L_{k}^{j}$ are the generalised Laguerre polynomials. Thus
+\eqn{
+\avg{\frac{1}{r}} = \br{\frac{2}{na}}^3 \frac{(n - \ell - 1)!}{2n (n + \ell)!} \int_{\theta = 0}^{\theta = \pi} \int_{\phi = 0}^{\phi = 2 \pi} \int_{r = 0}^{r = \infty} \frac{r^2}{r} \sin \theta \;  \e{ - 2r/na} \br{\frac{2 r}{na}}^{2\ell} \sqbr{L^{2\ell+1}_{n - \ell - 1} \br{\frac{2 r}{na}}}^2 Y^{m}_{\ell}(\theta,\phi)^2 \dd{r} \dd{\theta} \dd{\phi}
+}
+The integrals over the angular parts may be performed immediately using the orthonormality of the spherical harmonics. Substituting $\rho = 2 r/ na$ then yields
+\eqn{
+\avg{\frac{1}{r}}  = \frac{2}{na} \frac{(n - \ell - 1)!}{2n (n + \ell)!} \int_{\rho=0}^{\rho = \infty} \e{-\rho} \rho^{2 \ell + 1} L_{n - \ell -1}^{2 \ell + 1}(\rho)^2 \dd{\rho}
+}
+Using the well-known integral formula
+\eqnstar{
+\int_{0}^{\infty} t^{\lambda} \e{-t} L_{m}^{\lambda}(t) L_{n}^{\lambda}(t) \dd{t} = \frac{1}{n!} \Gamma(n + \lambda + 1) \delta_{n m}
+}
+gives
+\eqn{
+\avg{\frac{1}{r}}  = \frac{2}{na}  \frac{(n - \ell - 1)!}{2n (n + \ell)!} \br{ \frac{\Gamma(n+\ell+1)}{(n-\ell-1)!}} = \frac{1}{a n^2}
+}
+Similarly, we have
+\eqn{
+\avg{\frac{1}{r^2}} = \br{\frac{2}{na}}^3 \frac{(n - \ell - 1)!}{2n (n + \ell)!} \int_{\theta = 0}^{\theta = \pi} \int_{\phi = 0}^{\phi = 2 \pi} \int_{r = 0}^{r = \infty} \frac{r^2}{r^2} \sin \theta \;  \e{ - 2r/na} \br{\frac{2 r}{na}}^{2\ell} \sqbr{L^{2\ell+1}_{n - \ell - 1} \br{\frac{2 r}{na}}}^2 Y^{m}_{\ell}(\theta,\phi)^2 \dd{r} \dd{\theta} \dd{\phi}
+}
+and performing the same substitution gives
+\eqn{
+\avg{\frac{1}{r^2}} = \br{\frac{2}{na}}^2 \frac{(n - \ell - 1)!}{2n (n + \ell)!}  \int_{\rho = 0}^{\rho = \infty} \e{-\rho} \rho^{2 \ell}  L_{n - \ell -1}^{2 \ell + 1}(\rho)^2 \dd{\rho}
+}
+Integrating by parts and using the identity
+\eqn{
+\der{L_{n}^{\lambda}(x)}{x} =  - L^{\lambda + 1}_{n - 1}(x)
+}
+gives
+\eqn{
+\avg{\frac{1}{r^2}} = \br{\frac{2}{na}}^2 \frac{(n - \ell - 1)!}{2n (n + \ell)!} \cbr{ \sqbr{ \frac{\e{-\rho} \rho^{2 \ell+1}}{2 \ell + 1}   L_{n - \ell -1}^{2 \ell + 1}(\rho)^2}_{0}^{\infty} -  \frac{2}{2 \ell+1}\int_{\rho=0}^{\rho = \infty} \e{-\rho} \rho^{2 \ell+1} L_{n-\ell-1}^{2 \ell+1}(\rho) L_{n-\ell-1}^{2 \ell+2} \dd{\rho} }
+}
+We then use the identity
+\eqn{
+L_{n}^{\alpha + 1}(x)  = \sum_{i = 0}^{n} L_{i}^{\alpha}(x)
+}
+to produce
+\eqn{
+\avg{\frac{1}{r^2}}  =   - \frac{2}{2 \ell+1} \br{\frac{2}{na}}^2 \frac{(n - \ell - 1)!}{2n (n + \ell)!}  \sum_{i=0}^{n-\ell-1} \int_{\rho = 0}^{\rho= \infty} \e{-\rho} \rho^{2 \ell+1} L_{n - \ell-1}^{2 \ell+1}(\rho) L_{i}^{2 \ell+1} \dd{\rho} 
+}
+and by (7), this simplifies to
+\eqn{
+\avg{\frac{1}{r^2}}  & = - \frac{2}{2 \ell+1} \br{\frac{2}{na}}^2 \frac{(n - \ell - 1)!}{2n (n + \ell)!}  \sum_{i=0}^{n-\ell-1} \frac{1}{i!} \Gamma(2 \ell + 2 + i) \delta_{i,n-\ell-1}  = - \frac{2}{2 \ell+1} \br{\frac{2}{na}}^2 \frac{(n - \ell - 1)!}{2n (n + \ell)!}  \frac{\Gamma(n+\ell+1)}{(n-\ell -1)!}}
+and thus
+\eqn{
+\avg{\frac{1}{r^2}}  =  - \frac{1}{a^2 n^3 (\ell + 1/2)}
+}
+
+
+\end{document}
