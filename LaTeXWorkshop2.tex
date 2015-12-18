@@ -1,4 +1,5 @@
 \documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.7in,footskip=.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb} % Maths
 \usepackage{amsthm} % Maths
@@ -7,9 +8,8 @@
 \usepackage{tikz-cd} % Commutative diagrams
 \usepackage{amstext} % Math tables
 \usepackage{array} % Math tables
-\usepackage{rotating} % Rotation
 \usepackage{cite} %Citations
-\usepackage[a4paper,margin=0.7in,footskip=.5cm]{geometry}
+
 %Theorems and Definitions
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
@@ -65,17 +65,6 @@
 %Misspellings
 \newcommand{\detla}{\delta}
 \newcommand{\simga}{\sigma}
-%Slashed integral
-\def\Xint#1{\mathchoice
-{\XXint\displaystyle\textstyle{#1}}%
-{\XXint\textstyle\scriptstyle{#1}}%
-{\XXint\scriptstyle\scriptscriptstyle{#1}}%
-{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
-\!\int}
-\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
-\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
-\def\ddashint{\Xint=}
-\def\dashint{\Xint-}
 %Lie groups and Lie algebras
 \newcommand{\SOn}{\text{SO}_n}
 \newcommand{\son}{\mathfrak{so}_n}
@@ -85,17 +74,14 @@
 \newcommand{\Spinn}{\text{Spin}_n}
 \newcommand{\spinn}{\text{spin}_n}
 
-\pagestyle{myheadings}
-\markright{ $\scr{ANUMS}$ \hfill \LaTeX\ Workshop II \hfill}
-
 \title{\textbf{$\scr{ANUMS}$ \LaTeX\ Workshop II}}
-\author{Max Jeffs}
+\author{Maxim Jeffs}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-This session outlines a number of useful tools for working with \LaTeX\ -- feel free to skip to those sections that interest you. The sections primarily give brief introductions to the possibilities along with references to resources for learning more, rather than attempting to be comprehensive.
+This session outlines a number of useful tools for working with \LaTeX\ -- feel free to skip to those sections that interest you. The sections primarily give brief introductions to the possibilities along with references to resources for learning more, rather than attempting to be comprehensive. As before, the source file is available on GitHub (\verb$github.com/MaximJeffs/LaTeX$).
 
 \section{Equation alignment with \texttt{amsmath}}
 
