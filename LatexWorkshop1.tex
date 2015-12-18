@@ -3,20 +3,12 @@
 \usepackage{amssymb} % Maths
 \usepackage{amsthm} % Maths
 \usepackage{amsmath} % Maths
-\usepackage{graphicx} % Graphics
-\usepackage{fancyhdr} % Headers and footers
-\usepackage{tikz-cd} % Commutative diagrams
 \usepackage{amstext} % Math tables
 \usepackage{array} % Math tables
-\usepackage{rotating} % Rotation
 \usepackage[margin=0.7in]{geometry} % Margins
-\usepackage{cite} %Citations
-%Theorems and Definitions
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
+
+% If you are new to LaTeX, don't worry about this section - skip down to \begin{document}.
+
 %Calculus
 \newcommand{\dd}{\; \mathrm{d}}
 \newcommand{\integral}[4] {\int \limits_{#1}^{#2} #3 \: \mathrm{d}#4}
@@ -64,36 +56,12 @@
 \newcommand{\prf}[1]{\begin{proof} #1 \end{proof}}
 \newcommand{\m}[1]{\br{\begin{matrix} #1 \end{matrix}}}
 \newcommand{\aray}[1]{ \left\{\begin{array}{ccc}#1\end{array}\right.}
-%Misspellings
-\newcommand{\detla}{\delta}
-\newcommand{\simga}{\sigma}
-%Slashed integral
-\def\Xint#1{\mathchoice
-{\XXint\displaystyle\textstyle{#1}}%
-{\XXint\textstyle\scriptstyle{#1}}%
-{\XXint\scriptstyle\scriptscriptstyle{#1}}%
-{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
-\!\int}
-\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
-\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
-\def\ddashint{\Xint=}
-\def\dashint{\Xint-}
-%Lie groups and Lie algebras
-\newcommand{\SOn}{\text{SO}_n}
-\newcommand{\son}{\mathfrak{so}_n}
-\newcommand{\On}{\text{O}_n}
-\newcommand{\on}{\mathfrak{o}_n}
-\newcommand{\GLn}{\text{GL}_n}
-\newcommand{\Spinn}{\text{Spin}_n}
-\newcommand{\spinn}{\text{spin}_n}
 
-\pagestyle{fancy}
-\lhead{$\scr{ANUMS}$}
-\rhead{\LaTeX\ Workshop I}
-
-\title{\textbf{ANUMS \LaTeX\ Workshop I}}
+\title{\textbf{$\scr{ANUMS}$ \LaTeX\ Workshop I}}
 \author{Maxim Jeffs}
 \date{\today}
+
+% Start of the document:
 
 \begin{document}
 \maketitle
@@ -101,7 +69,7 @@
 \section{Setup}
 If you are working on one of the computers provided, open up the program \texttt{TexWorks} and start on section 2.
 \paragraph{}
-If you have brought your own laptop, to begin you will need to download a \LaTeX\ compiler and editor. The complete installation \texttt{MikTeX} is recommended for Windows, and can be downloaded from \texttt{miktex.org/download}. If you are running OSX, download \texttt{MacTeX} from \texttt{tug.org/mactex/}. If you are running a Linux OS, you can probably figure this out for yourself. Follow all of the instructions provided, and once everything has installed, run \texttt{TeXworks} or \texttt{TeXShop}. Alternatively, you can also download \texttt{TeXMaker} from \texttt{xm1math.net/texmaker/download.html} and run this instead. Again, follow all instructions provided. If you run into any trouble, just ask one of our friendly volunteers. 
+If you have brought your own laptop, to begin you will need to download a \LaTeX\ compiler and editor. The complete installation \texttt{MikTeX} is recommended for Windows, and can be downloaded from \texttt{miktex.org/download}. If you are running OSX, download \texttt{MacTeX} from \texttt{tug.org/mactex/}. If you are running a Linux OS, you can probably figure this out for yourself. Follow all of the instructions provided, and once everything has installed, run \texttt{TeXworks} or \texttt{TeXShop}. Alternatively, you can also download \texttt{TeXMaker} from \texttt{xm1math.net/texmaker/download.html} and run this instead. Again, follow all instructions provided. If you run into any trouble, just ask one of our friendly volunteers. As a warning, some of these files are very large and may take quite some time to install. You may wish to use the online compiler at \texttt{latex.informatik.uni-halle.de/latex-online/latex.php} while you wait.
 
 \section{Compiling}
 
@@ -276,6 +244,9 @@ In principle, you now know enough to produce a \LaTeX\ document, but you will al
 \end{itemize}
 
 \section{Example}
+
+% In order to simplify the typesetting, I have  used many of the new commands defined in the preamble - if you want to find
+% out more about this, come  to the later LaTeX workshops.
 
 If you have not brought an assignment, try to typeset the following passage (from a genuine assignment):
 \paragraph{}
