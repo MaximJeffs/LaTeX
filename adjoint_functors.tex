@@ -1,8 +1,8 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage[T1]{fontenc} %fonts
 \usepackage[utf8]{inputenc} %fonts
 \usepackage[margin=0.5in]{geometry} % Margins
-\usepackage{amssymb, amsthm, amsmath, amstext,array,relsize,mathrsfs} % Maths
+\usepackage{amssymb, amsthm, amsmath, amstext,array,relsize,mathrsfs,mathtools} % Maths
 \usepackage{graphicx} % Graphics
 \usepackage{tikz-cd,tikz} %Diagrams
 
@@ -115,26 +115,28 @@
 \textbf{Left adjoint functors $F$} & \textbf{Right adjoint functors $G$} \\
 \hline
 are \textbf{right exact} & are \textbf{left exact} \\
-colimits, direct limits, inductive limits & diagonal functor $\Delta$ \\
-filtered colimts (exact on $\mathrm{Mod}_R$),  $\lim\limits_{\longrightarrow}A_i $ & diagonal functor $\Delta$ \\
+colimits, inductive limits & diagonal functor $\Delta$ \\
+direct limits, filtered colimts (exact on $\mathrm{Mod}_R$),  $\lim\limits_{\longrightarrow}A_i $ & diagonal functor $\Delta$ \\
 diagonal functor $\Delta$ & limits, inverse limits, projective limits, $\lim\limits_{\longleftarrow} A_i$ \\
-coproducts: $\bigsqcup$ $\bigoplus$ & products: $\Pi$ \\ 
+coproducts: $\bigsqcup$ $\bigoplus$ & products: $\prod \bigtimes$ \\ 
 cokernels & kernels \\
 inverse image sheaf $f^{-1}$ (exact on sheaves) & direct image sheaf $f_{*}$, sheaf on a base \\
 stalk of a sheaf, germs at $p$ & skyscraper sheaf at $p$ \\
 constant sheaf functor & global sections $\Gamma$ \\
-have left derived functors (commuting with coproducts) & have right derived functors \\
+have left derived functors (commuting with coproducts) &  if enough projectives \\
+if enough injectives & have right derived functors \\
 sheafification (exact) & forgetful functor (only left exact) \\
 $\cdot \otimes_{R} B$ from $\Mod_{R} \to \Mod_{S}$ & $\Hom_{S}(B, \cdot)$ \\
 preserves injectives & if adjoint to an exact functor \\
 if adjoint to an exact functor & preserves projectives\\
-localisation (colimit over divisibility poset) &  forgetful functor  \\
+localisation (colimit over divisibility poset, exact) &  forgetful functor  \\
 groupification & forgetful functor \\
 extension of scalars: $\cdot \otimes_{B} A$ & forgetful functor $\mathrm{Mod}_{A} \to \mathrm{Mod}_{B}$ \\
 forgetful functor $\mathrm{Mod}_{A} \to \mathrm{Mod}_{B}$ &  $\Hom_{B}(A, \cdot)$ \\
 extension by zero: $f_{!}$ (open embeddings)  & inverse image $f^{-1}$ \\
 pullback $f^{*}$ (for q.coh. sheaves) & pushforward $f_{*}$ \\
-global sections $\Gamma(X, \scr{O}_X)$ & $\spec$ functor (to $\mathrm{Sch}^{\text{opp}}$) \\
+$\spec$ functor (to $\mathrm{Sch}^{\text{opp}}$) & global sections $\Gamma(X, \scr{O}_X)$ \\
+$\thicksim$ from $A$-modules to $\scr{O}_X$-modules & global sections $\Gamma(X, \shf)$ \\
 \hline
 \end{tabular}
 \end{center}
