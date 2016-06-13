@@ -1,17 +1,66 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 \usepackage[T1]{fontenc} %fonts
+\usepackage{baskervald} %fonts (also try ebgaramond)
+\usepackage[md]{titlesec} %Stops bold titles
 \usepackage[utf8]{inputenc} %fonts
 \usepackage[margin=0.5in]{geometry} % Margins
-\usepackage{amssymb, amsthm, amsmath, amstext,array,relsize,mathrsfs} % Maths
+\usepackage{amssymb, amsthm, amsmath,amstext,array,relsize,mathrsfs} % Maths
+\usepackage{enumerate,xifthen}%Loops,conditionals
 \usepackage{graphicx} % Graphics
-\usepackage{tikz-cd,tikz} %Diagrams
+\usepackage{tikz-cd,tikz,xifthen} %Diagrams
+\usetikzlibrary{decorations.markings,calc,shapes,snakes} %Tikz stuff
+\usetikzlibrary{decorations.pathreplacing}%More TikZ stuff
+\makeatletter
+
+%Useful TikZ Macro for drawing grids: call using \draw[show grid integer coordinates] (0,0) grid (5,5);
+%Does not behave well under scaling, however!
+\def\tikz@Get@x@coor#1,#2\tikz@sentinel{%
+  \pgfmathparse{int(round(#1/1cm))}}
+\def\tikz@Get@y@coor#1,#2\tikz@sentinel{%
+  \pgfmathparse{int(round(#2/1cm))}}
+\tikzset{%
+  show grid integer coordinates/.style = {%
+    decoration = {%
+      show path construction, 
+      moveto code = {%
+        \expandafter\tikz@Get@x@coor\tikzinputsegmentfirst\tikz@sentinel
+        \edef\tikz@tempa{\pgfmathresult}%
+        \expandafter\tikz@Get@x@coor\tikzinputsegmentlast\tikz@sentinel
+        \edef\tikz@tempb{\pgfmathresult}%
+        \pgfmathparse{equal(\tikz@tempa,\tikz@tempb)}%
+        \ifnum\pgfmathresult=1\relax
+        \node[anchor=north] at (\tikzinputsegmentfirst) {%
+          \tikz@tempa};
+        \else
+        \node[anchor=east] at (\tikzinputsegmentfirst) {%
+          \expandafter\tikz@Get@y@coor\tikzinputsegmentfirst\tikz@sentinel
+          \pgfmathresult};
+        \fi}},
+    postaction = decorate}}
 
 %Theorems and Definitions
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
+\newtheoremstyle{style}% name
+  {\topsep}% Space above
+  {\topsep}% Space below
+  {\itshape}% Body font
+  {}% Indent amount
+  {\scshape}% Theorem head font
+  {:}%Punctuation after theorem head
+  {.5em}%Space after theorem head
+  {}% theorem head spec
+
+\theoremstyle{style}%Stops bold titles.
+\newtheorem{definition}{DEFINITION}
+\theoremstyle{style}
+\newtheorem{theorem}{THEOREM}
+\theoremstyle{style}
+\newtheorem{lemma}{LEMMA}
+\theoremstyle{style}
+\newtheorem{proposition}{PROPOSITION}
+\theoremstyle{style}
+\newtheorem{corollary}{COROLLARY}
+\theoremstyle{remark}%Stops italicising contents.
+\newtheorem{remark}{Remark}
 
 %General:
 \newcommand{\dd}{\; \mathrm{d}}
@@ -41,7 +90,7 @@
 \newcommand{\cp}[1]{ \mathbb{CP}^{#1}}
 \newcommand{\ex}[1]{$\color{red}^{\mathlarger{\circledast}\textit{#1}}$}
 
-%Physics nonsense
+%Physics
 \newcommand{\ket}[1]{\left.| #1 \right\rangle}
 \newcommand{\bra}[1]{\left\langle #1\right.|}
 \newcommand{\braket}[2]{\left\langle #1  |  \; #2 \right \rangle}
@@ -95,10 +144,12 @@
 \newcommand{\rad}{\mathrm{rad}}
 \newcommand{\spec}{\mathrm{Spec}}
 \newcommand{\shf}{\mathscr{F}}
+\newcommand{\ishf}{\mathscr{I}}
 \newcommand{\res}{\mathrm{res}}
+\newcommand{\coker}[1]{\mathrm{coker} #1}
 
 \title{ASSIGNMENT 1}
-\author{Max Jeffs, u5389111}
+\author{Maxim Jeffs}
 \date{\today}
 
 
