@@ -1,10 +1,10 @@
 \documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
 \usepackage{amssymb} % Maths
 \usepackage{amsthm} % Maths
 \usepackage{amsmath} % Maths
 \usepackage{amstext} % Math tables
 \usepackage{array} % Math tables
+\usepackage{hyperref}
 \usepackage[margin=0.7in]{geometry} % Margins
 
 % If you are new to LaTeX, don't worry about this section - skip down to \begin{document}.
@@ -66,12 +66,16 @@
 \begin{document}
 \maketitle
 
-\section{Setup}
-If you are working on one of the computers provided, open up the program \texttt{TexWorks} and start on section 2.
-\paragraph{}
-If you have brought your own laptop, to begin you will need to download a \LaTeX\ compiler and editor. The complete installation \texttt{MikTeX} is recommended for Windows, and can be downloaded from \texttt{miktex.org/download}. If you are running OSX, download \texttt{MacTeX} from \texttt{tug.org/mactex/}. If you are running a Linux OS, you can probably figure this out for yourself. Follow all of the instructions provided, and once everything has installed, run \texttt{TeXworks} or \texttt{TeXShop}. Alternatively, you can also download \texttt{TeXMaker} from \texttt{xm1math.net/texmaker/download.html} and run this instead. Again, follow all instructions provided. If you run into any trouble, just ask one of our friendly volunteers. As a warning, some of these files are very large and may take quite some time to install. You may wish to use the online compiler at \verb$latex.informatik.uni-halle.de/latex-online/latex.php$ while you wait.
+The PDF file of this sheet as well as the \LaTeX\ code used to create it are both available at  \href{https://maximjeffs.github.io/}{\texttt{MaximJeffs.github.io}}.
 
-\section{Compiling}
+\section*{Setup}
+If you are working on one of the computers provided, open up the program \texttt{TexWorks} and start on the next section.
+\paragraph{}
+If you have brought your own laptop, to begin you will need to download a \LaTeX\ compiler and editor. The complete installation of \texttt{MikTeX} is recommended for Windows operating systems and can be downloaded from  \href{http://miktex.org/download}{\texttt{miktex.org/download}}. If you are running a Mac OS, download \texttt{MacTeX} from \href{https://tug.org/mactex/mactex-download.html}{\texttt{tug.org/mactex}}. If you are running a Linux OS, you can probably figure this out for yourself. Follow all of the instructions provided and once everything has installed, run \texttt{TeXworks} or \texttt{TeXShop}. Alternatively, you can also download \texttt{TeXMaker} from \href{http://www.xm1math.net/texmaker/download.html}{\texttt{www.xm1math.net/texmaker/download.html}} and run this program instead. Again, follow all instructions provided.
+\paragraph{}
+If you run into any trouble, just ask one of our friendly volunteers. As a warning, some of these files are very large and may take quite some time to download and install. You may wish to use the online compiler at \href{http://latex.informatik.uni-halle.de/latex-online/latex.php}{\texttt{latex.informatik.uni-halle.de/latex-online/latex.php}} while you wait.
+
+\section*{Compiling}
 
 Either way, you will hopefully be greeted with a blank screen that allows you to type. Before doing anything else, copy the following incantation into the document:
 
